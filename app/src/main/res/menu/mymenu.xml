@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/menu_Dugushkina"
+        android:title="menu">
+    </item>
+    <item
+        android:id="@+id/menu_Help"
+        android:orderInCategory="3"
+        android:title="help">
+    </item>
     <item
         android:id="@+id/menu_add"
         android:title="add">
@@ -14,6 +24,7 @@
         android:orderInCategory="3"
         android:title="delete">
     </item>
+    </group>
     <group
         android:id="@+id/group1">
         <item
@@ -32,4 +43,5 @@
             android:title="exit">
         </item>
     </group>
+
 </menu>

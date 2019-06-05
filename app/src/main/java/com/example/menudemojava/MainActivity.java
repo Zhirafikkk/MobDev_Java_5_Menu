@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         // TODO Auto-generated method stub
         // пункты меню с ID группы = 1 видны, если в CheckBox стоит галка
-        menu.setGroupVisible(1, chb.isChecked());
+        menu.setGroupVisible(R.id.group1, chb.isChecked());
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -55,7 +55,40 @@ public class MainActivity extends AppCompatActivity {
         sb.append("\r\n title: " + item.getTitle());
         tv.setText(sb.toString());
 
-        return super.onOptionsItemSelected(item);
+
+        String msg = "";
+        switch (item.getItemId()) {
+            case R.id.menu_Dugushkina:
+                msg = "name clicked";
+                break;
+            case R.id.menu_Help:
+                msg = "help clicked";
+                break;
+            case R.id.menu_add:
+                item.setChecked(true);
+                msg = "add clicked";
+                break;
+            case R.id.menu_edit:
+                item.setChecked(true);
+                msg = "edit clicked";
+                break;
+            case R.id.menu_delete:
+                msg = "delete clicked";
+                break;
+            case R.id.menu_copy:
+                msg = "copy clicked";
+                break;
+            case R.id.menu_paste:
+                msg = "paste clicked";
+                break;
+            case R.id.menu_exit:
+                msg = "exit clicked";
+                finish();
+            default:
+                super.onOptionsItemSelected(item);
+        }
+        Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+        return true;
     }
 
 }

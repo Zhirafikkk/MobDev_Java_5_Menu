@@ -8,7 +8,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/chbExtMenu"
-        android:text="расширенное меню">
+        android:text="@string/invisible"
+        android:checked="true">
+
     </CheckBox>
     <TextView
         android:layout_width="fill_parent"
